@@ -10,8 +10,8 @@ metadata:
     # on the cluster, this hack will trigger re-queue on Addons until one exists
     kubeaddons.mesosphere.io/hack-requires-defaultstorageclass: "true"
   annotations:
-    catalog.kubeaddons.mesosphere.io/addon-revision: "0.40.2-1"
-    appversion.kubeaddons.mesosphere.io/nginx-ingress: "0.40.2"
+    catalog.kubeaddons.mesosphere.io/addon-revision: "1.36.3-1"
+    appversion.kubeaddons.mesosphere.io/nginx-ingress: "1.36.3"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0
@@ -27,4 +27,4 @@ spec:
   chartReference:
     chart: ingress-nginx
     repo: https://kubernetes.github.io/ingress-nginx/
-    version: 0.40.2
+    version: 1.36.3
