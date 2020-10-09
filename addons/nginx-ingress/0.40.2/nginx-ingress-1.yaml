@@ -1,0 +1,30 @@
+---
+apiVersion: kubeaddons.mesosphere.io/v1beta1
+kind: Addon
+metadata:
+  name: nginx-ingress
+  namespace: kubeaddons
+  labels:
+    kubeaddons.mesosphere.io/name: nginx-ingress
+    # TODO: we're temporarily supporting dependency on an existing default storage class
+    # on the cluster, this hack will trigger re-queue on Addons until one exists
+    kubeaddons.mesosphere.io/hack-requires-defaultstorageclass: "true"
+  annotations:
+    catalog.kubeaddons.mesosphere.io/addon-revision: "0.40.2-1"
+    appversion.kubeaddons.mesosphere.io/nginx-ingress: "0.40.2"
+spec:
+  kubernetes:
+    minSupportedVersion: v1.15.0
+  cloudProvider:
+    - name: aws
+      enabled: false
+    - name: azure
+      enabled: false
+    - name: docker
+      enabled: false
+    - name: none
+      enabled: false
+  chartReference:
+    chart: ingress-nginx
+    repo: https://kubernetes.github.io/ingress-nginx/
+    version: 0.40.2
