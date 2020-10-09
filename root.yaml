@@ -1,0 +1,12 @@
+---
+nginx-ingress:
+  display_name: nginx-ingress
+  description: nginx-ingress
+  logo: nginx-ingress/logo.png
+  category: proxy
+  overview: nginx-ingress/overview.md
+  resources:
+    links:
+      - type: support
+        title: Support Resources
+        link: https://www.d2iq.com
